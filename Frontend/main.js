@@ -241,12 +241,11 @@ async function loadPreview(blob) {
   showStatus("Loading Excel preview...", "info");
 
   try {
-    // Create browser URL from received Excel Blob
-    const objectUrl = URL.createObjectURL(blob);
+    // Convert Blob into ArrayBuffer
+    const arrayBuffer = await blob.arrayBuffer();
 
-    currentBlobUrl = objectUrl;
-
-    new ExcelViewer("#excel-view", objectUrl, {
+    // Pass binary data directly to ExcelViewer
+    new ExcelViewer("#excel-view", arrayBuffer, {
       theme: "light",
       lang: "en",
       themeBtn: true,
