@@ -92,10 +92,7 @@ systemFileInput.addEventListener("change", async (e) => {
   excelViewEl.innerHTML = "";
   downloadBtn.disabled = true;
   currentReport = null;
-  if (currentBlobUrl) {
-    URL.revokeObjectURL(currentBlobUrl);
-    currentBlobUrl = null;
-  }
+
 
   // If both files selected, peek at headers to warn about swapped files
   if (file && bankFileInput.files[0]) {
@@ -112,10 +109,7 @@ bankFileInput.addEventListener("change", async (e) => {
   excelViewEl.innerHTML = "";
   downloadBtn.disabled = true;
   currentReport = null;
-  if (currentBlobUrl) {
-    URL.revokeObjectURL(currentBlobUrl);
-    currentBlobUrl = null;
-  }
+
 
   if (file && systemFileInput.files[0]) {
     await validateHeaders();
