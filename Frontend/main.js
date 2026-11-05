@@ -24,7 +24,6 @@ const bankUploadedName = document.getElementById("bankUploadedName");
 const ExcelViewer = window.ExcelViewer;
 
 let currentReport = null; // { reportId, filename }
-let currentBlobUrl = null;
 let filesSelected = { system: false, bank: false };
 
 // ---------- helpers ----------
@@ -241,11 +240,9 @@ async function loadPreview(blob) {
   showStatus("Loading Excel preview...", "info");
 
   try {
-    // Convert Blob into ArrayBuffer
     const arrayBuffer = await blob.arrayBuffer();
 
-    // Pass binary data directly to ExcelViewer
-    new ExcelViewer("#excel-view", arrayBuffer, {
+    new ExcelViewer(document.getElementById("excel-view"), arrayBuffer, {
       theme: "light",
       lang: "en",
       themeBtn: true,
