@@ -1,5 +1,5 @@
 // Backend URL. Change this if your FastAPI server runs on a different host/port.
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://reconciliation-python-project.onrender.com";
 
 const systemFileInput = document.getElementById("systemFile");
 const bankFileInput = document.getElementById("bankFile");

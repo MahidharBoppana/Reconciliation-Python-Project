@@ -18,7 +18,7 @@ app = FastAPI(title="Payout Reconciliation API")
 # Allow React development server to communicate with FastAPI
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173", "https://reconciliation-python-project-1.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
