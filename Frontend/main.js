@@ -93,7 +93,6 @@ systemFileInput.addEventListener("change", async (e) => {
   downloadBtn.disabled = true;
   currentReport = null;
 
-
   // If both files selected, peek at headers to warn about swapped files
   if (file && bankFileInput.files[0]) {
     await validateHeaders();
@@ -109,7 +108,6 @@ bankFileInput.addEventListener("change", async (e) => {
   excelViewEl.innerHTML = "";
   downloadBtn.disabled = true;
   currentReport = null;
-
 
   if (file && systemFileInput.files[0]) {
     await validateHeaders();
@@ -239,7 +237,7 @@ async function loadPreview(blob) {
     new ExcelViewer(document.getElementById("excel-view"), arrayBuffer, {
       theme: "light",
       lang: "en",
-      themeBtn: true,
+      themeBtn: false,
     });
 
     showStatus("Preview loaded successfully.", "success");
